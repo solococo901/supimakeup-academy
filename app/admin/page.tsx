@@ -233,7 +233,7 @@ export default function AdminPage() {
   if (!isAdmin) return null;
 
   return (
-    <div className="min-h-screen bg-[#0F1A41] p-4 md:p-10 text-white font-sans">
+    <div className="min-h-screen bg-[#0F1A41] p-4 md:p-10 text-white font-inter">
       <div className="max-w-6xl mx-auto">
         {/* HEADER ADMIN */}
         <div className="max-w-6xl mx-auto flex justify-between items-center mb-6">
@@ -297,7 +297,7 @@ export default function AdminPage() {
             </button>
             <button
               onClick={() => savePrizes(prizeList)}
-              className="flex-1 bg-yellow-600 hover:bg-yellow-500 text-[#0F1A41] px-6 py-3 rounded-xl font-black shadow-lg transition-all"
+              className="flex-1 bg-yellow-600 hover:bg-yellow-500 text-[#0F1A41] px-6 py-3 rounded-xl font-inter shadow-lg transition-all"
             >
               LƯU THAY ĐỔI
             </button>
@@ -346,14 +346,14 @@ export default function AdminPage() {
 
           <button
             onClick={handleAddUser}
-            className="w-full md:w-auto bg-yellow-600 hover:bg-yellow-500 text-[#0F1A41] px-6 py-3 rounded-xl font-black transition-all h-[50px]"
+            className="w-full md:w-auto bg-yellow-600 hover:bg-yellow-500 text-[#0F1A41] px-6 py-3 rounded-xl font-inter transition-all h-[50px]"
           >
             TẠO TÀI KHOẢN
           </button>
         </div>
 
         {/* PHẦN 2: QUẢN LÝ NGƯỜI DÙNG */}
-        <h1 className="text-3xl font-black text-yellow-500 mb-8 uppercase tracking-tighter flex items-center gap-2">
+        <h1 className="text-3xl font-inter text-yellow-500 mb-8 uppercase tracking-tighter flex items-center gap-2">
           <span className="w-2 h-10 bg-yellow-500 rounded-full"></span>
           Admin Control Panel
         </h1>
@@ -375,17 +375,17 @@ export default function AdminPage() {
                   key={user.id}
                   className="border-b border-white/5 hover:bg-white/5 transition-colors"
                 >
-                  <td className="p-6 font-medium text-white/80">
+                  <td className="p-6 font-inter text-white/80">
                     <div className="flex flex-col">
                       <span>{user.email}</span>
-                      <span className="text-[10px] text-white/20 font-mono">
+                      <span className="text-[10px] text-white/20 font-inter">
                         {user.id}
                       </span>
                     </div>
                   </td>
 
                   <td className="p-6 text-center">
-                    <span className="text-3xl font-black text-yellow-500 tabular-nums drop-shadow-md">
+                    <span className="text-3xl font-inter text-yellow-500 tabular-nums drop-shadow-md">
                       {user.spins_left}
                     </span>
                   </td>
@@ -418,7 +418,7 @@ export default function AdminPage() {
                             className="text-xs border-b border-white/10 pb-2 mb-2 last:border-0 flex justify-between items-start group"
                           >
                             <div>
-                              <span className="text-yellow-500 font-bold">
+                              <span className="text-yellow-500 font-inter font-bold">
                                 {h.prize}
                               </span>
                               <br />
@@ -457,7 +457,7 @@ export default function AdminPage() {
                         onClick={() =>
                           handleUpdateSpins(user.id, user.spins_left, 1)
                         }
-                        className="bg-yellow-600 hover:bg-yellow-500 text-[#0F1A41] h-10 w-20 rounded-xl font-black text-xs uppercase shadow-md transition-all active:scale-95"
+                        className="bg-yellow-600 hover:bg-yellow-500 text-[#0F1A41] h-10 w-20 rounded-xl font-inter text-xs uppercase shadow-md transition-all active:scale-95"
                       >
                         +1 Lượt
                       </button>

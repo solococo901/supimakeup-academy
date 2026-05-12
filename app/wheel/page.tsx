@@ -148,7 +148,7 @@ export default function WheelPage() {
 
   if (prizes.length === 0) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-[#fff5f6] text-[#ff85a1] font-bold text-xl">
+      <div className="min-h-screen flex items-center justify-center bg-[#fff5f6] text-[#ff85a1] font-inter font-bold text-xl">
         Đang tải vòng quay...
       </div>
     );
@@ -159,18 +159,18 @@ export default function WheelPage() {
       <div className="absolute top-4 w-full px-6 flex justify-between items-center z-50">
         <div className="flex flex-col md:flex-row gap-2">
           {/* HIỂN THỊ EMAIL */}
-          <div className="bg-white px-4 py-2 rounded-full border-2 border-[#ffdae0] text-[#8b3d48] font-bold shadow-sm text-sm">
+          <div className="bg-white px-4 py-2 rounded-full border-2 border-[#ffdae0] text-[#8b3d48] font-inter font-bold shadow-sm text-sm">
             Tài khoản:{" "}
             <span className="text-lg text-[#ff85a1]">{userEmail}</span>
           </div>
 
           <button
             onClick={handleLogout}
-            className="bg-[#ff85a1] hover:bg-[#ff6b8d] text-white px-4 py-2 rounded-full text-sm font-bold shadow-sm transition-all active:scale-95"
+            className="bg-[#ff85a1] hover:bg-[#ff6b8d] text-white px-4 py-2 rounded-full text-sm  font-interfont-bold shadow-sm transition-all active:scale-95"
           >
             ĐĂNG XUẤT
           </button>
-          <div className="bg-white px-4 py-2 rounded-full border-2 border-[#ffdae0] text-[#8b3d48] font-bold shadow-sm text-sm">
+          <div className="bg-white px-4 py-2 rounded-full border-2 border-[#ffdae0] text-[#8b3d48] font-inter font-bold shadow-sm text-sm">
             Lượt quay:{" "}
             <span className="text-[#ff85a1] text-lg">
               {userData?.spins_left || 0}
@@ -180,13 +180,13 @@ export default function WheelPage() {
 
         <button
           onClick={() => setShowHistory(true)}
-          className="px-6 py-2 bg-white text-[#ff85a1] font-bold rounded-full shadow-sm border-2 border-[#ffdae0] hover:bg-[#ffe4e1] transition-colors"
+          className="px-6 py-2 bg-white text-[#ff85a1] font-inter font-bold rounded-full shadow-sm border-2 border-[#ffdae0] hover:bg-[#ffe4e1] transition-colors"
         >
           Lịch sử quà
         </button>
       </div>
 
-      <h1 className="text-3xl font-black text-[#ff85a1] mb-8 uppercase tracking-wider text-center drop-shadow-sm">
+      <h1 className="text-3xl font-inter text-[#ff85a1] mb-8 uppercase tracking-wider text-center drop-shadow-sm">
         Vòng Quay May Mắn
       </h1>
 
@@ -203,20 +203,20 @@ export default function WheelPage() {
         <div className="fixed inset-0 z-[200] flex items-center justify-center bg-black/60 backdrop-blur-md">
           <div className="bg-white w-[90%] max-w-sm rounded-[2rem] shadow-2xl p-8 text-center border-8 border-[#ffe4e1] transform animate-in zoom-in-75 duration-300">
             <div className="text-5xl mb-4 animate-bounce">🎉</div>
-            <h2 className="text-2xl font-black text-[#ff85a1] mb-2 uppercase tracking-wide">
+            <h2 className="text-2xl font-inter text-[#ff85a1] mb-2 uppercase tracking-wide">
               Chúc mừng bạn!
             </h2>
-            <p className="text-[#8b3d48] font-medium mb-4">
+            <p className="text-[#8b3d48] font-inter font-medium mb-4">
               Bạn đã nhận được phần thưởng:
             </p>
             <div className="bg-[#fff5f6] py-4 px-6 rounded-2xl border-2 border-dashed border-[#ff85a1] mb-6">
-              <span className="text-xl font-black text-[#ff85a1] uppercase">
+              <span className="text-xl font-inter text-[#ff85a1] uppercase">
                 {wonPrize}
               </span>
             </div>
             <button
               onClick={() => setWonPrize(null)}
-              className="w-full py-3 bg-gradient-to-r from-[#ffb6c1] to-[#ff85a1] text-white font-bold rounded-full shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 transition-all uppercase tracking-widest"
+              className="w-full py-3 bg-gradient-to-r from-[#ffb6c1] to-[#ff85a1] text-white font-inter font-bold rounded-full shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 transition-all uppercase tracking-widest"
             >
               Nhận Quà
             </button>
@@ -228,12 +228,12 @@ export default function WheelPage() {
         <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/50 backdrop-blur-sm">
           <div className="bg-white w-[90%] max-w-md rounded-3xl shadow-2xl overflow-hidden border-4 border-[#ffdae0] transform transition-all">
             <div className="bg-[#ff85a1] py-4 text-center relative">
-              <h2 className="text-white font-black text-xl tracking-wider uppercase">
+              <h2 className="text-white font-inter text-xl tracking-wider uppercase">
                 Lịch sử trúng thưởng
               </h2>
               <button
                 onClick={() => setShowHistory(false)}
-                className="absolute top-1/2 -translate-y-1/2 right-4 text-white hover:text-[#ffe4e1] font-bold text-2xl leading-none"
+                className="absolute top-1/2 -translate-y-1/2 right-4 text-white hover:text-[#ffe4e1] font-inter font-bold text-2xl leading-none"
               >
                 &times;
               </button>
@@ -267,7 +267,7 @@ export default function WheelPage() {
                 </ul>
               ) : (
                 <div className="text-center py-10 text-[#ffb6c1]">
-                  <p className="font-medium text-lg mb-2">
+                  <p className="font-inter text-lg mb-2">
                     Bạn chưa có quà nào.
                   </p>
                   <p className="text-sm">Hãy thử vận may ngay nhé!</p>

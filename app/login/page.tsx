@@ -42,14 +42,14 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-[#fff5f6] p-4 font-sans">
+    <div className="flex min-h-screen items-center justify-center bg-[#fff5f6] p-4 font-inter">
       {/* Khối đăng nhập chính */}
       <div className="w-full max-w-md bg-white rounded-[2.5rem] shadow-2xl overflow-hidden border-8 border-[#ffe4e1]">
         
         {/* Phần đầu màu hồng đậm */}
         <div className="bg-[#ff85a1] py-10 text-center px-6">
           <div className="text-5xl mb-4 animate-bounce">🎁</div>
-          <h2 className="text-2xl font-black text-white uppercase tracking-widest">
+          <h2 className="text-2xl font-inter font-bold text-white uppercase tracking-widest">
             Vòng quay may mắn
           </h2>
           <p className="text-[#ffe4e1] font-inter text-xs mt-2  tracking-tighter">
@@ -67,7 +67,7 @@ export default function LoginPage() {
           )}
 
           <div className="space-y-2">
-            <label className="block text-xs font-black text-[#8b3d48] uppercase ml-1">
+            <label className="block text-xs font-inter font-bold text-[#8b3d48] uppercase ml-1">
               Email học viên
             </label>
             <input 
@@ -81,7 +81,7 @@ export default function LoginPage() {
           </div>
 
           <div className="space-y-2">
-            <label className="block text-xs font-black text-[#8b3d48] uppercase ml-1">
+            <label className="block text-xs font-inter font-bold text-[#8b3d48] uppercase ml-1">
               Mật khẩu
             </label>
             <input 
@@ -105,7 +105,7 @@ export default function LoginPage() {
 
         {/* Footer */}
         <div className="bg-[#fff5f6] py-4 text-center border-t border-[#ffe4e1]">
-          <span className="text-[10px] font-bold text-[#ffb6c1] uppercase tracking-[0.4em]">
+          <span className="text-[10px] font-inter font-bold text-[#ffb6c1] uppercase tracking-[0.4em]">
             Supi - Sanverse - Makeup and Academy
           </span>
         </div>
