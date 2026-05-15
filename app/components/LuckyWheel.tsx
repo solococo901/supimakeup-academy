@@ -23,7 +23,12 @@ const pinkPalette = [
   "#FF9DBB", // Deep Pastel Pink (Hồng đậm pastel)
 ];
 
-export default function LuckyWheel({ prizes, targetIndex, onFinished, disabled }: LuckyWheelProps) {
+export default function LuckyWheel({
+  prizes,
+  targetIndex,
+  onFinished,
+  disabled,
+}: LuckyWheelProps) {
   const [isSpinning, setIsSpinning] = useState(false);
   const [currentRotation, setCurrentRotation] = useState(0);
   const controls = useAnimation();
@@ -68,7 +73,7 @@ export default function LuckyWheel({ prizes, targetIndex, onFinished, disabled }
   };
 
   return (
-    <div className="relative flex items-center justify-center select-none font-sans overflow-hidden py-10">
+    <div className="relative flex flex-col items-center justify-center select-none font-sans overflow-hidden gap-8 py-10">
       {/* KIM CHỈ - Cố định ở 12 giờ */}
       <div
         className="absolute top-4 z-[60] w-10 h-12 bg-[#ff85a1]"
@@ -84,37 +89,54 @@ export default function LuckyWheel({ prizes, targetIndex, onFinished, disabled }
           background: `conic-gradient(from 0deg, ${prizes
             .map(
               (_, i) =>
-                `${pinkPalette[i % pinkPalette.length]} ${i * anglePerPrize}deg ${(i + 1) * anglePerPrize}deg`
+                `${pinkPalette[i % pinkPalette.length]} ${i * anglePerPrize}deg ${(i + 1) * anglePerPrize}deg`,
             )
             .join(", ")})`,
         }}
       >
         {prizes.map((text, i) => (
-          // 1. LỚP WRAPPER: Rộng bằng cả vòng quay, chỉ nhận góc xoay
-          <div
-            key={i}
-            className="absolute top-0 left-0 w-full h-full pointer-events-none"
-            style={{
-              // -90deg để quy chuẩn hệ trục CSS (từ 3h) về 12h
-              transform: `rotate(${-90 + i * anglePerPrize + anglePerPrize / 2}deg)`,
-            }}
-          >
-            {/* 2. LỚP CHỨA TEXT: Đi từ tâm ra mép, tự động nằm giữa tia bán kính */}
-            <div className="absolute top-1/2 left-1/2 w-1/2 -translate-y-1/2 flex items-center justify-end pr-10 md:pr-14">
-              <span className="text-[11px] md:text-sm font-bold text-[#8b3d48] uppercase truncate max-w-[80%]">
-                {text}
-              </span>
-            </div>
-          </div>
-        ))}
+  <div
+    key={i}
+    className="absolute top-0 left-0 w-full h-full pointer-events-none"
+    style={{
+      transform: `rotate(${-90 + i * anglePerPrize + anglePerPrize / 2}deg)`,
+    }}
+  >
+    {/* - w-[35%]: Giới hạn độ dài để không chạm mép ngoài và không đè nút SPIN
+        - left-[58%]: Đẩy cụm chữ ra xa tâm vòng quay
+    */}
+    <div className="absolute top-1/2 left-[58%] w-[38%] -translate-y-1/2">
+      <span 
+        className="text-[8px] md:text-[11px] font-bold text-[#8b3d48] uppercase leading-[1.2] block text-center whitespace-normal break-words"
+        style={{
+          display: "-webkit-box",
+          WebkitLineClamp: 4, // Cho phép xuống tối đa 4 dòng
+          WebkitBoxOrient: "vertical",
+          overflow: "hidden",
+        }}
+      >
+        {text}
+      </span>
+    </div>
+  </div>
+))}
       </motion.div>
 
       <button
         onClick={spin}
         disabled={isSpinning || disabled}
-        className="absolute w-24 h-24 md:w-28 md:h-28 rounded-full z-[70] bg-white border-4 border-[#ffdae0] shadow-xl hover:scale-105 active:scale-95 transition-transform disabled:opacity-80 disabled:hover:scale-100"
+        className={`
+          relative px-12 py-4 rounded-full text-white font-black text-xl md:text-2xl uppercase tracking-[0.2em] shadow-[0_10px_20px_rgba(255,133,161,0.4)] transition-all
+          ${isSpinning || disabled 
+            ? "bg-gray-300 cursor-not-allowed shadow-none" 
+            : "bg-gradient-to-r from-[#ffb6c1] to-[#ff85a1] hover:scale-105 active:scale-95 active:shadow-inner"
+          }
+        `}
       >
-        <span className="text-[#ff85a1] font-black text-xl">SPIN</span>
+        {isSpinning ? "Đang quay..." : "Quay ngay"}
+        
+        {/* Hiệu ứng bóng sáng cho nút thêm sang trọng */}
+        <div className="absolute top-0 left-0 w-full h-full rounded-full bg-white/10 pointer-events-none"></div>
       </button>
     </div>
   );

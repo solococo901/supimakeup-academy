@@ -209,8 +209,9 @@ export default function WheelPage() {
             <p className="text-[#8b3d48] font-inter font-medium mb-4">
               Bạn đã nhận được phần thưởng:
             </p>
-            <div className="bg-[#fff5f6] py-4 px-6 rounded-2xl border-2 border-dashed border-[#ff85a1] mb-6">
-              <span className="text-xl font-inter text-[#ff85a1] uppercase">
+            {/* Trong file app/wheel/page.tsx - Phần Popup chúc mừng */}
+            <div className="bg-[#fff5f6] py-6 px-4 rounded-2xl border-2 border-dashed border-[#ff85a1] mb-6 shadow-inner">
+              <span className="text-lg md:text-xl font-inter font-bold text-[#ff85a1] uppercase leading-relaxed block">
                 {wonPrize}
               </span>
             </div>
